@@ -34,7 +34,7 @@ exports.changeUserStatus = async (req, res, next) => {
     next(err)
   }
 }
-const User = require('../models/user.model')
+
 
 exports.getAllUsers = async (req, res, next) => {
   try {

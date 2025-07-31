@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const adminController = require('../controllers/admincontroller')
-const { authenticate, authorizeAdmin } = require('../middlewares/authmiddleware')
+const authorizeAdmin  = require('../middleware/authmiddleware')
+const authenticate  = require('../middleware/authmiddleware')
 
 router.get('/users', authenticate, authorizeAdmin, adminController.getAllUsers)
 router.patch('/users/:id/role', authenticate, authorizeAdmin, adminController.changeUserRole)

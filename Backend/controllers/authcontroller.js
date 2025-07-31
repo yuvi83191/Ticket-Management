@@ -16,7 +16,7 @@ exports.registerUser = async (req, res, next) => {
 
     const user = await User.create({ name, email, password })
     const token = generateToken(user._id, user.role)
-    res.status(201).json({ token })
+    res.status(201).json({ token,user })
   } catch (err) {
     next(err)
   }
@@ -32,7 +32,7 @@ exports.loginUser = async (req, res, next) => {
     if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' })
 
     const token = generateToken(user._id, user.role)
-    res.json({ token })
+    res.json({ token , user })
   } catch (err) {
     next(err)
   }

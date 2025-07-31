@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const ticketController = require('../controllers/ticketcontroller')
-const { authenticate } = require('../middleware/authmiddleware')
+const ticketController = require('../controllers/ticketController');
+const  authenticate  = require('../middleware/authmiddleware')
 
 router.post('/', authenticate, ticketController.createTicket)
 router.get('/my', authenticate, ticketController.getMyTickets)
