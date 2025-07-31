@@ -87,21 +87,27 @@ Authorization: Bearer <your_token>
 ## API Endpoints
 
  Auth Routes
-Method,	Endpoint,	     Access,	    Description
-POST,	/auth/register,	 Public,	    Register a new user
-POST,	/auth/login,     Public,	    Login and get token
 
- Ticket Routes
-Method,	Endpoint,	     Access,	           Description
-POST,	/tickets,	     User,	           Create new ticket
-GET,	/tickets,	     Agent, Admin,	    View all tickets (filtered)
-GET,	/tickets/my	     User,	             View own tickets
-GET,	/tickets/:id,	 User, Agent	     Get single ticket
-PATCH,	/tickets/:id,	 Owner, Agent	     Update ticket
-DELETE,	/tickets/:id,	 Owner, Agent	      Delete ticket
+Method    | Endpoint           | Access   | Description
+----------|--------------------|----------|--------------------------
+POST      | /auth/register     | Public   | Register a new user
+POST      | /auth/login        | Public   | Login and get token
+
+Ticket Routes
+
+Method    | Endpoint           | Access         | Description
+----------|--------------------|----------------|-------------------------------
+POST      | /tickets           | User           | Create new ticket
+GET       | /tickets           | Agent, Admin   | View all tickets (filtered)
+GET       | /tickets/my        | User           | View own tickets
+GET       | /tickets/:id       | User, Agent    | Get single ticket
+PATCH     | /tickets/:id       | Owner, Agent   | Update ticket
+DELETE    | /tickets/:id       | Owner, Agent   | Delete ticket
 
  Admin Routes
-Method,	Endpoint,	              Access,	   Description
-GET,	/admin/users,	          Admin	       View all users
-PATCH,	/admin/users/:id/role	  Admin	       Change user role
-PATCH,	/admin/users/:id/status	  Admin	       Activate/Deactivate user
+
+Method    | Endpoint                    | Access   | Description
+----------|-----------------------------|----------|----------------------------
+GET       | /admin/users                | Admin    | View all users
+PATCH     | /admin/users/:id/role       | Admin    | Change user role
+PATCH     | /admin/users/:id/status     | Admin    | Activate/Deactivate user
