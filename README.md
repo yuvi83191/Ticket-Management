@@ -7,6 +7,8 @@ This is a full-stack **Support Ticket Management System** project built using:
 
 It includes user authentication, role-based access control, ticket tracking, and admin control features.
 
+- Styling : Tailwind CSS 
+
 ---
 
 ##  Features
@@ -41,15 +43,17 @@ cd Ticket-Management
  
   Step 3: Create .env file in Backend folder
 
+
+
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+
+MONGO_URI=mongodb+srv://yuvi8319182:yuvraj8319182@cluster0.t5l4a4v.mongodb.net/support-ticket-db
+
+JWT_SECRET=support-ticket
+
 NODE_ENV=development
 
- Replace your_mongodb_connection_string with your MongoDB URL
- Use any strong string for JWT_SECRET
-
-  Step 4: Run the Backend server - npm run dev
+ Step 4: Run the Backend server - npm run dev
 
 It will start on:
  http://localhost:5000
@@ -79,10 +83,7 @@ Login API: POST http://localhost:5000/api/auth/login
 
 Register API: POST http://localhost:5000/api/auth/register
 
-Use JWT token in headers like:
 
-
-Authorization: Bearer <your_token>
 
 ## API Endpoints
 

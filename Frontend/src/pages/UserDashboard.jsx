@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../api/axios.js";
 import { useUser } from "../store/userContext.jsx";
 
 export default function UserDashboard() {
@@ -16,7 +16,7 @@ export default function UserDashboard() {
       status: filter.status,
       priority: filter.priority,
     };
-    const res = await axios.get("http://localhost:5000/api/tickets/my", { params });
+    const res = await axios.get("http://localhost:5000/api/tickets/my", { params } ,  payload, { withCredentials: true });
     setTickets(res.data.tickets);
     setTotalPages(res.data.totalPages);
   };
